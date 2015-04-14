@@ -22,3 +22,7 @@ Thermostat.prototype.decreaseTemp = function() {
     console.log('Error, temperature cannot be decreased below 10°C');
   }
 };
+
+Thermostat.prototype.resetTemp = function() {
+  this.temp = 20;
+};
