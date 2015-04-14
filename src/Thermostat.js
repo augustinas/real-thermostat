@@ -7,10 +7,11 @@ var Thermostat = function() {
 };
 
 Thermostat.prototype.increaseTemp = function() {
-  if(this.temp < 25) {
+  var maxTemp = this.powerSaving ? 25 : 32;
+  if(this.temp < maxTemp) {
     this.temp++;
   } else {
-    console.log('Error, temperature cannot be increased above 25°C');
+    console.log('Error, temperature cannot be increased above ' + maxTemp + '°C');
   }
 };
 
