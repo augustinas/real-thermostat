@@ -10,5 +10,9 @@ Thermostat.prototype.increaseTemp = function() {
 };
 
 Thermostat.prototype.decreaseTemp = function() {
-  this.temp--;
+  if(this.temp > 10) {
+    this.temp--;
+  } else {
+    console.log('Error, temperature cannot be decreased below 10°C');
+  }
 };
