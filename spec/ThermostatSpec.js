@@ -29,4 +29,12 @@ describe('Thermostat', function() {
   it('has a power saving mode on by default', function() {
     expect(thermostat.powerSaving).toBe(true);
   });
+
+  it('cannot go above 25 degrees CELSIUS if power saving is on', function() {
+    thermostat.powerSaving = true;
+    for(i = thermostat.temp; i <= 25; i++) {
+      thermostat.increaseTemp();
+    }
+    expect(thermostat.temp).toEqual(25);
+  });
 });
