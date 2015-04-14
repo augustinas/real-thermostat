@@ -1,10 +1,24 @@
 var thermostat = new Thermostat();
-document.getElementById('temperature').innerHTML = thermostat.temp + "°C";
+var updateView = function() {
+  document.getElementById('temperature').innerHTML = thermostat.temp + "°C";
+};
+
+updateView();
 document.getElementById('up').addEventListener('click', function() {
   thermostat.increaseTemp();
-  document.getElementById('temperature').innerHTML = thermostat.temp + "°C";
+  updateView();
 });
+
 document.getElementById('down').addEventListener('click', function() {
   thermostat.decreaseTemp();
-  document.getElementById('temperature').innerHTML = thermostat.temp + "°C";
+  updateView();
+});
+
+document.getElementById('reset').addEventListener('click', function() {
+  thermostat.resetTemp();
+  updateView();
+});
+
+document.getElementById('powerSaving').addEventListener('click', function() {
+  thermostat.powerSaving = !thermostat.powerSaving;
 });
