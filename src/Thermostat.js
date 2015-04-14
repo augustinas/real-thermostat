@@ -7,7 +7,11 @@ var Thermostat = function() {
 };
 
 Thermostat.prototype.increaseTemp = function() {
-  this.temp++;
+  if(this.temp < 25) {
+    this.temp++;
+  } else {
+    console.log('Error, temperature cannot be increased above 25°C');
+  }
 };
 
 Thermostat.prototype.decreaseTemp = function() {
