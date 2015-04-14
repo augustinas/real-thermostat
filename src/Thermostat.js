@@ -3,6 +3,7 @@ var Thermostat = function() {
   // ‘this’ keyword gives us an equivalent to
   // a public instance variable.
   this.temp = 20;
+  this.powerSaving = true;
 };
 
 Thermostat.prototype.increaseTemp = function() {
