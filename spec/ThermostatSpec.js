@@ -45,4 +45,12 @@ describe('Thermostat', function() {
     }
     expect(thermostat.temp).toEqual(32);
   });
+
+  it('reverts to 20 degrees CELSIUS upon reset', function() {
+    thermostat.increaseTemp();
+    thermostat.increaseTemp();
+    expect(thermostat.temp).toEqual(22);
+    thermostat.resetTemp();
+    expect(thermostat.temp).toEqual(20);
+  });
 });
