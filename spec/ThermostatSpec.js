@@ -37,4 +37,12 @@ describe('Thermostat', function() {
     }
     expect(thermostat.temp).toEqual(25);
   });
+
+  it('cannot go above 32 degrees CELSIUS if power saving is off', function() {
+    thermostat.powerSaving = false;
+    for(i = thermostat.temp; i <= 32; i++) {
+      thermostat.increaseTemp();
+    }
+    expect(thermostat.temp).toEqual(32);
+  });
 });
