@@ -18,4 +18,11 @@ describe('Thermostat', function() {
     thermostat.decreaseTemp();
     expect(thermostat.temp).toEqual(19);
   });
+
+  it('cannot go below 10 degrees CELSIUS', function() {
+    for(i = thermostat.temp; i >= 10; i--) {
+      thermostat.decreaseTemp();
+    }
+    expect(thermostat.temp).toEqual(10);
+  });
 });
