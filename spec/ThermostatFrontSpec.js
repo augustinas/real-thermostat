@@ -26,4 +26,8 @@ describe('Thermostat Front-End', function() {
     $('#reset').trigger('click');
     expect('#temperature').toContainText('20°C');
   });
+
+  it('has power saving checkbox checked when loaded', function() {
+    expect('#powersaving').toBeChecked();
+  });
 });

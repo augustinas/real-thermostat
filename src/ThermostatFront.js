@@ -19,3 +19,7 @@ document.getElementById('reset').addEventListener('click', function() {
   thermostat.resetTemp();
   updatePage();
 });
+
+document.getElementById('powersaving').addEventListener('click', function() {
+  thermostat.powerSaving = !thermostat.powerSaving;
+});
