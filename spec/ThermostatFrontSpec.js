@@ -30,4 +30,20 @@ describe('Thermostat Front-End', function() {
   it('has power saving checkbox checked when loaded', function() {
     expect('#powersaving').toBeChecked();
   });
+
+  it('power saving checkbox controls maximum temperature', function() {
+    for(i = thermostat.temp; i <= 26; i++) {
+      $('#up').trigger('click');
+    }
+    expect('#temperature').toContainText('25°C');
+    $('#powersaving').trigger('click');
+    expect('#powersaving').not.toBeChecked();
+
+    for(i = thermostat.temp; i <= 33; i++) {
+      $('#up').trigger('click');
+    }
+    expect('#temperature').toContainText('32°C');
+    $('#powersaving').trigger('click');
+    expect('#powersaving').toBeChecked();
+  });
 });
