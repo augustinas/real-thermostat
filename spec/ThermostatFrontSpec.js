@@ -46,4 +46,19 @@ describe('Thermostat Front-End', function() {
     $('#powersaving').trigger('click');
     expect('#powersaving').toBeChecked();
   });
+
+  it('changes text colour depending on temperature', function() {
+    expect($('#temperature').css('color')).toEqual('rgb(255, 165, 0)');
+
+    for(i = thermostat.temp; i >= 17; i--) {
+      $('#down').trigger('click');
+    }
+    expect($('#temperature').css('color')).toEqual('rgb(0, 128, 0)');
+
+    $('#reset').trigger('click');
+    for(i = thermostat.temp; i <= 25; i++) {
+      $('#up').trigger('click');
+    }
+    expect($('#temperature').css('color')).toEqual('rgb(255, 0, 0)');
+  });
 });

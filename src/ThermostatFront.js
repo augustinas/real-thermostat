@@ -1,6 +1,13 @@
 var thermostat = new Thermostat();
 var updatePage = function() {
-document.getElementById('temperature').innerHTML = thermostat.temp + '°C';
+  document.getElementById('temperature').innerHTML = thermostat.temp + '°C';
+  if(thermostat.temp < 18) {
+    document.getElementById('temperature').style.color = 'green';
+  } else if(thermostat.temp < 25) {
+    document.getElementById('temperature').style.color = 'orange';
+  } else {
+    document.getElementById('temperature').style.color = 'red';
+  }
 };
 
 updatePage();
