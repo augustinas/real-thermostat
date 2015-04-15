@@ -14,4 +14,8 @@ describe('Thermostat Front-End', function() {
     expect('#temperature').toContainText('21°C');
   });
 
+  it('decreases the temperature on button click', function() {
+    $('#down').trigger('click');
+    expect('#temperature').toContainText('19°C');
+  });
 });

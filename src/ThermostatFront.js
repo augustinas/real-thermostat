@@ -9,3 +9,8 @@ document.getElementById('up').addEventListener('click', function() {
   thermostat.increaseTemp();
   updatePage();
 });
+
+document.getElementById('down').addEventListener('click', function() {
+  thermostat.decreaseTemp();
+  updatePage();
+});
