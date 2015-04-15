@@ -9,5 +9,4 @@ describe('Thermostat Front-End', function() {
     expect('#temperature').toContainText('20°C');
   });
 
-
 });
