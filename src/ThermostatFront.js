@@ -14,3 +14,8 @@ document.getElementById('down').addEventListener('click', function() {
   thermostat.decreaseTemp();
   updatePage();
 });
+
+document.getElementById('reset').addEventListener('click', function() {
+  thermostat.resetTemp();
+  updatePage();
+});

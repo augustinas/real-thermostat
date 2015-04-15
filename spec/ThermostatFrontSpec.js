@@ -18,4 +18,12 @@ describe('Thermostat Front-End', function() {
     $('#down').trigger('click');
     expect('#temperature').toContainText('19°C');
   });
+
+  it('resets the temperature on button click', function() {
+    $('#down').trigger('click');
+    $('#down').trigger('click');
+    expect('#temperature').toContainText('18°C');
+    $('#reset').trigger('click');
+    expect('#temperature').toContainText('20°C');
+  });
 });
