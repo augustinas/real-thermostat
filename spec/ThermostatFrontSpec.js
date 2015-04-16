@@ -50,12 +50,14 @@ describe('Thermostat Front-End', function() {
   it('changes text colour depending on temperature', function() {
     expect('#temperature').toHaveAttr('style', 'color: orange;');
 //    expect($('#temperature').css('color')).toEqual('rgb(255, 165, 0)');
+//    expect('#temperature').toHaveCss({color: 'rgb(255, 165, 0)'});
 
     for(i = thermostat.temp; i >= 17; i--) {
       $('#down').trigger('click');
     }
     expect('#temperature').toHaveAttr('style', 'color: green;');
 //    expect($('#temperature').css('color')).toEqual('rgb(0, 128, 0)');
+//    expect('#temperature').toHaveCss({color: 'rgb(0, 128, 0)'});
 
     $('#reset').trigger('click');
     for(i = thermostat.temp; i <= 25; i++) {
@@ -63,5 +65,6 @@ describe('Thermostat Front-End', function() {
     }
     expect('#temperature').toHaveAttr('style', 'color: red;');
 //    expect($('#temperature').css('color')).toEqual('rgb(255, 0, 0)');
+//    expect('#temperature').toHaveCss({color: 'rgb(255, 0, 0)'});
   });
 });
