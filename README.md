@@ -2,4 +2,4 @@
 
 Completed using JavaScript and Jasmine
 
-*Authors: Mark & Augustinas*
+*Authors: Mark & Augustinas & Илья*
